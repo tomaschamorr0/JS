@@ -1,74 +1,75 @@
-class autos {
+class Auto{
     constructor( marca, modelo ,color ,kilometros, valor){
-    this.marca = marca;
-    this.modelo = modelo;
-    this.color = color;
-    this.kilometros = kilometros;
-    this.valor = valor;
-    }
-} 
-const auto1 = new autos(" Lamborghini " ," Aventador LP 780-4 " ," Amarillo "  ," 350 km/h " , 417825);
-const auto2 = new autos(" Porsche " ," 911 Carrera " ," Gris "  ," 311 km/h " , 345000);
-const auto3 = new autos(" Bugatti " ," Veyron " ," Negro "  ," 408 Km/h " , 1222500);
-const auto4 = new autos(" BMW " ," Serie 8  " ," Negro y dorado "  ," 250 km/h " , 258000);
-    
-let respuestasi = prompt("¿Desea ver los autos?");
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.kilometros = kilometros;
+        this.valor = valor;
+        }
+}
+const autos = [new Auto ("Lamborghini " ," Aventador LP 780-4 " ," Amarillo "  ," 350 km/h " , 417825), 
+new Auto ("Porsche " ," 911 Carrera " ," Gris "  ," 311 km/h " , 345000),
+new Auto ("Bugatti " ," Veyron " ," Negro "  ," 408 Km/h " , 1222500),
+new Auto ("BMW " ," Serie 8  " ," Negro y dorado "  ," 250 km/h " , 258000)]
+
+let respuestasi = prompt("¿Desea ver los autos?").toLowerCase();
 if (respuestasi != "si") {
-    alert("Los vas a necesitar")
+    alert("Lo vas a necesitar")
 }
 else{
-    alert("Aqui estan los autos");
-    alert("Tenemos un "+ auto1.marca+" , "+ auto2.marca +" , "+ auto3.marca +" y "+ auto4.marca);
+    let mensaje = "";
+    autos.forEach(a => {
+        alert("Auto: \n"+a.marca + a.modelo)
+    });
 };
-function eliminar(){
+function borrar(){
     alert("Usted selecciono la operacion ELIMINAR")
     let num = -1;
     let mensaje = "";
-    autos.forEach(marca => {
+    autos.forEach(a => {
         num++;
-        mensaje=mensaje+"Marca "+num+":"+autos.marca+"\n";
+        mensaje=mensaje+"Marca "+num+" "+a.marca+":\n";
     });
-    let respuestaeliminar=prompt("Ingrese la marca de auto que desee eliminar \n"+mensaje);
+    let respuestaeliminar=prompt("Ingrese el numero de la marca de auto que desee eliminar \n"+mensaje);
     autos.splice(parseInt(respuestaeliminar),1);
-    alert(autos.join("--"));
 }
-function añadir(){
-    alert("Usted selecciono la operacion AGREGAR")
-    let preguntaagregar = prompt("Elige donde quieres agregar al (principio) o al (final)");
-    if(preguntaagregar === "final"){
-        marca.push(prompt("Ingrese su nueva marca de auto"));
-        alert(autos);
-    }
-    else if(preguntaagregar === "principio"){
-        autos.unshift(prompt("Ingrese su nueva marca de auto"));
-        alert(autos);
-    }
-    else{
-        alert("No ingreso una operacion válida");
-    }
+function agregar() {
+    let mensaje = "";
+    autos.push(new Auto(prompt("Ingrese su nueva marca de auto"),"","","",0));
 }
 function mostrar(){
-    alert("Aqui estan los autos")
-    alert(autos.auto1);
-    alert(autos.auto2);
-    alert(autos.auto3);
-    alert(autos.auto4);
+    let mensaje = "";
+    autos.forEach(a => {
+        alert("Marca: "+a.marca +"\n"+"Modelo: " +a.modelo +"\n"+"Color: "+a.color +"\n"+"Llega hasta: "+a.kilometros +"\n"+"Valor: " + a.valor+"$ USD")
+    });
 }
-let operacion = prompt("Elige que operacion quiere hacer(\n1)ELIMINAR \n2)AGREGAR \n3)VER AUTOS \n Escriba el numero").toLowerCase();
+function muestraFinal(){
+    const autitos = autos.map((el)=> el.marca)
+    console.log(autitos);
+    alert ("Aqui estan los Autos:\n"+autitos);
+    alert("Espero que le haya gustado");
+}    
+let operacion = prompt("Elige que operacion quiere hacer:\n1) ELIMINAR \n2) AGREGAR \n3) VER LOS DATOS DE LOS AUTOS \n Escriba el numero de la operacion").toLowerCase();
     switch (operacion) {
         case "1":
-            eliminar();
+            borrar();
             break;
 
         case "2":
-            añadir();
+            agregar();
             break;
 
         case "3":
             mostrar();
             break;
-            
+
         default:
             alert("No ingreso correctamente la operacion");
             break;
     }
+if (operacion != "3" ) {
+    muestraFinal();
+}
+else{
+    alert("Espero que le haya gustado")
+}
