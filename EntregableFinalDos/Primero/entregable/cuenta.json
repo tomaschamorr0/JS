@@ -1,0 +1,5 @@
+[
+    { "id": 1,"nombre": "Tomas","apellido": "Chamorro","correo": "tomaschamorro@gmail.com","contraseña": "tom1","nacimiento": "2000-09-12","rol": "1"},
+    { "id": 2,"nombre": "Number","apellido": "Five","correo": "numberfive@gmail.com","contraseña": "thekidwantscoffe","nacimiento": "1989-10-1","rol": "2"},
+    { "id": 3,"nombre": "Diego","apellido": "Hargreeves","correo": "diegohargreeves@gmail.com","contraseña": "cuchillas","nacimiento": "1989-10-1","rol": "2"}
+]

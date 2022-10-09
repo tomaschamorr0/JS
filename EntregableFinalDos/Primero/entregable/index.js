@@ -27,8 +27,7 @@ function validarCredeciales(pCorreo, pContraseña){
     return bAccesso;
 }
 
-
-/* interfaziniciosesion */
+/* interfaz inicio sesion */
 let btnIngresar = document.getElementById("btnIngresar");
 
 function ingresar(){
@@ -45,7 +44,7 @@ function ingresar(){
     }
 }
 
-
+/* Aca pongo que el evento salga cuando se toque el boton "Ingresar" */
 btnIngresar.addEventListener("click",()=>{
     let sCorreo ="";
     let sContrasenna ="";
@@ -55,7 +54,9 @@ btnIngresar.addEventListener("click",()=>{
     sContrasenna = document.getElementById("txtContrasenna").value;
 
     bAccesso = validarCredeciales(sCorreo,sContrasenna);
-    
+ 
+/* Bueno, si te da acceso recorre la funcion ingresar creada arriba */
+/* Si no te tira la alerta de que esta mal el usuario */
     if(bAccesso == true){
         ingresar();
         console.log("Estamos adentro");

@@ -27,10 +27,6 @@ header div{
     text-align:left;
     position: relative;
 }
-h1{
-    position: absolute;
-    left: 10rem;
-}
 .logo{
     margin-left: 15%;
 }
@@ -40,7 +36,7 @@ h1{
 }
 .contenedor{
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 30px;
 }
 footer{
     background-color:#999999;
@@ -106,4 +102,33 @@ input {
 }
 p{
     font-size: 18px;
+}
+.usuarios{
+    display: block;
+    width: 125px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border-radius: 20px;
+    margin: 80px 70rem;
+    padding: 15px 30px;
+    background-color: #999999;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.atras{
+    display:inline;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border-radius: 20px;
+    margin: 80px 70rem;
+    padding: 15px 30px;
+    background-color: #999999;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+a:hover{
+    background-color: transparent;
+    border: 2px solid gray;
+    color: #b80f22;
 }

@@ -16,22 +16,10 @@ const autos = [new Auto ("Lamborghini " ," Aventador LP 780-4 " ," Amarillo "  ,
     new Auto ("Bugatti " ," Veyron " ," Negro "  ," 408 Km/h " , 1222500),
     new Auto ("BMW " ," Serie 8  " ," Negro y dorado "  ," 250 km/h " , 258000)]
 
-function mostrar(){
-    let mensaje = "";
-    autos.forEach(a => {
-        alert("Marca: "+a.marca +"\n"+"Modelo: " +a.modelo +"\n"+"Color: "+a.color +"\n"+"Llega hasta: "+a.kilometros +"\n"+"Valor: " + a.valor+"$ USD")
-    });
-}
-function muestraFinal(){
-    const autitos = autos.map((el)=> el.marca)
-    console.log(autitos);
-    alert ("Aqui estan los Autos:\n"+autitos);
-    alert("Espero que le haya gustado");
-} 
 /* Pulsando el boton "Fotos Autos"   */
 btnFoto.addEventListener("click",()=>{
     console.log("Click");
-
+/* Aca depediendo el numero que elija muestra la operacion/sweetalert del auto que eligio */ 
 let operacionFotos = prompt("Elige que auto desea ver\n1) Lamborghini\n2) Porsche \n3) Bugatti \n4) BMW").toLocaleLowerCase();  
     switch (operacionFotos) {
         case "1":
