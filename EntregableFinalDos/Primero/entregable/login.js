@@ -1,6 +1,5 @@
 const btnAuto = document.getElementById("btnAuto");
 const btnFoto = document.getElementById("btnFoto");
-const btnDato = document.getElementById("btnDato");
 const btnPrecio = document.getElementById("btnPrecio");
 class Auto{
     constructor( marca, modelo ,color ,kilometros, valor){
@@ -87,12 +86,5 @@ btnPrecio.addEventListener("click",()=>{
     console.log("Click");
     autos.forEach(a => {
         alert("Auto: \n"+a.marca + a.modelo +"\nCon un valor de "+a.valor+"$ USD")
-    });
-});
-/* Pulsando el boton "Datos de Autos" */
-btnDato.addEventListener("click",()=>{
-    let mensaje = "";
-    autos.forEach(a => {
-        alert("Marca: "+a.marca +"\n"+"Modelo: " +a.modelo +"\n"+"Color: "+a.color +"\n"+"Llega hasta: "+a.kilometros +"\n"+"Valor: " + a.valor+"$ USD")
     });
 });

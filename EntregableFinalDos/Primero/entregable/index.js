@@ -12,6 +12,7 @@ function obternetListaUsuarios(){
     }
     return listaUsuarios;
 }
+/* funcion para validar los datos y asi iniciar sesion */
 function validarCredeciales(pCorreo, pContraseña){
     let listaUsuarios = obternetListaUsuarios();
     let bAccesso = false;
